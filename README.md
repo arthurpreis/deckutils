@@ -1,5 +1,5 @@
 # deckutils
-Card and stack of cards objects and basic functions
+Playing card and stack of cards objects and basic functions in python.
 
 ##Card
 
