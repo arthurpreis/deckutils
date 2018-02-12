@@ -1,2 +1,2 @@
 # deckutils
-Card and stack of cards generic objects.
+Card and stack of cards objects and basic functions
