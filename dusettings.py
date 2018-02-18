@@ -1,4 +1,4 @@
-class DeckUtils():
+class Settings():
     def __init__(self, gameMode = 'standard'):
         '''Use this class to set the cards values and names accordingly 
         to the games rules and language'''

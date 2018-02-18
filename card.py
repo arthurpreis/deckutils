@@ -1,6 +1,6 @@
-from deckutils import DeckUtils
+from dusettings import Settings
 
-dk = DeckUtils("standard")
+dk = Settings('standard')
 
 class Card():
     def __init__(self, suit=0, rank=0):
@@ -55,3 +55,23 @@ class Card():
     def __ne__(self,other):
         return not(self.__eq__(other))
         
+    def __add__(self, other):
+        if isinstance(other, Card):
+            l = []
+            l.append(self)
+            l.append(other)
+            return l
+        elif isinstance(other, list):
+            l = []
+            l = other[:]
+            l.append(self)
+            return l
+        else:
+            raise TypeError("card.__add__() accepts only cards and lists as arguments.")
+            
+    def __radd__(self, other):
+        self.__add__(other)
+        
+if __name__ == '__main__':
+    c = Card(0,0)
+    print(c)

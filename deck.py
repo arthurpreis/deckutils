@@ -1,8 +1,8 @@
 from card import Card
 from stack import Stack
-from deckutils import DeckUtils
+from dusettings import Settings
 
-dk = DeckUtils()
+dk = Settings()
 
 class Deck(Stack):
     def __init__(self):

@@ -2,9 +2,11 @@ from card import Card
 import random
 
 class Stack():
-    def __init__(self):
+    def __init__(self, cards = []):
         '''stack contains a list of cards'''
         self.cards = []
+        for c in cards:
+            self.cards.append(c)
 
     def __len__(self):
         return len(self.cards)
@@ -21,8 +23,10 @@ class Stack():
             s.append(other)
             return s
         elif isinstance(other, list):
-            self.cards.append(other)
-            return self
+            s = Stack()
+            s.cards = self.cards[:]
+            s.cards += other
+            return s
         else:
             raise TypeError("stack.__add__() accepts only cards and stacks as arguments.")
             return None
@@ -37,7 +41,7 @@ class Stack():
                 try:
                     s.remove(c)
                 except ValueError:
-                    pass
+                    return None
             return s
         elif isinstance(other, Card):
             s = Stack()
@@ -45,7 +49,7 @@ class Stack():
             try:
                 s.remove(other)
             except ValueError:
-                pass
+                return None
             return s
         elif isinstance(other, list):
             self.cards.append(other)

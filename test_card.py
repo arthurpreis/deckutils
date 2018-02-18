@@ -1,8 +1,8 @@
 import unittest
 from card import Card
-from deckutils import DeckUtils
+from dusettings import Settings
 
-dk = DeckUtils('standard')
+dk = Settings('standard')
 
 class TestCard(unittest.TestCase):
     

@@ -7,6 +7,8 @@ class TestCard(unittest.TestCase):
     def test_len_add(self):
         s1 = Stack()
         s2 = Stack()
+        s3 = Stack()
+        s4 = Stack()
         c1 = Card(0, 0)
         c2 = Card(0, 1)
         c3 = Card(0, 2)
@@ -35,7 +37,14 @@ class TestCard(unittest.TestCase):
         self.assertEqual(len(s1), 3)
         
         self.assertRaises(TypeError, Stack, s1, 1)
-        #s3 = c1 + c2 + c3
+        
+        # s3 = c1 + c2
+        # self.assertTrue(isinstance(s3, Stack))
+        # self.assertEqual(len(s3), 2)
+        #print(type(c1 + c2))
+        s4 = Stack((c1, c2 , c3))
+        # self.assertTrue(isinstance(s3, Stack))
+        # self.assertEqual(len(s4), 3)
         
     def test_compare(self):
         s1 = Stack()
@@ -233,5 +242,6 @@ class TestCard(unittest.TestCase):
         
         s2 = s2 + s1
         self.assertEqual(len(s2), 4)
+        
 if __name__=='__main__':
     unittest.main()
